@@ -20,6 +20,6 @@ function validar_cpf($cpf)
     }else{
         $cpf{10} = 11 - $resto;
     }
-    return "Os digitos verificadores são ". $cpf{9} . " e " . $cpf{10};
+    return "Os digitos verificadores são ". "<strong><span class='numero'>" . $cpf{9} . "</span></strong>" . " e " . "<strong><span class='numero'>" . $cpf{10} . "</span></strong>";
 }
-var_dump(validar_cpf($_POST["cpf"]));
+// echo(validar_cpf($_POST["cpf"]));

@@ -1,3 +1,6 @@
+<?php
+  include_once('verificar.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +34,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.php">Cálculo do Dígito Verificador de CPF</a>
+        <a class="navbar-brand js-scroll-trigger" href="index.php">Cálculo do Dígito Verificador de CPF</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         </button>
       </div>
@@ -41,21 +44,8 @@
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
         <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
-        <h2 class="text-uppercase mb-0">Trabalho de Matemática Básica</h2>
+        <h2 class="text-uppercase mb-0"><?php echo validar_cpf($_POST["cpf"]) ?></h2>
         <hr><br><br><br>
-        <div class="row">
-            <div class="mb-5 mx-auto">
-                    <form action="calculo.php" method="post" id="FormCPF">
-                        <div class="input-group">
-                            <input type="text" id="CPF" name="cpf" class="form-control" placeholder="Digite o CPF">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit">Calcular!</button>
-                            </span>
-                        </div><!-- /input-group -->
-                    </form>
-                    <li class="list-group-item list-group-item-danger hidden" id="error">Digite um CPF válido</li>
-            </div>
-        </div>
       </div>
     </header>
     <footer class="footer text-center">
@@ -117,22 +107,6 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
-    <script>
-      $(document).ready(function () { 
-          var $Cpf = $("#CPF");
-          $Cpf.mask('000.000.000', {reverse: true});
-      });
-      
-      $("#FormCPF").submit(function(event){
-        cpfVal = $("#CPF").val()
-        if(cpfVal == ""){
-          alert("Digite um cpf válido");
-          event.preventDefault();
-        }
-      });
-    </script>
 
   </body>
 
