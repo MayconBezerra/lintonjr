@@ -47,7 +47,7 @@
             <div class="mb-5 mx-auto">
                     <form action="calculo.php" method="post" id="FormCPF">
                         <div class="input-group">
-                            <input type="text" id="CPF" name="cpf" class="form-control" placeholder="Digite o CPF">
+                            <input type="text" id="CPF" name="cpf" class="form-control" maxlength="11" placeholder="Digite o CPF">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit">Calcular!</button>
                             </span>
